@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitando dados do user</title>
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="Somar" onclick="somar()">
+
+    <div id="resultado">Resultado</div>
+
+    <script>
+        function somar(){
+            var txtn1 = window.document.getElementById('txtn1')
+            var txtn2 = window.document.getElementById('txtn2')
+            var resultado = window.document.getElementById('resultado')//tem que chamar a div para dentro do script para funcionar
+            //Lembre que tem que converter os valores em number
+            var n1 = Number(txtn1.value)
+            var n2 = Number(txtn2.value)
+            //crie uma variável para armazenar a soma
+            var soma = n1 + n2
+            //Imprima o resultado na div
+            resultado.innerHTML = `${n1} + ${n2} = ${soma}.`
+        }
+    </script>
+</body>
+</html>

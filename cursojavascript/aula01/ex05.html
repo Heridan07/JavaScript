@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O DOM</title>
+    <style>
+        body{
+            background-color: beige;
+            margin: auto;
+            padding: 10px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1 class="titulo">Entendendo o DOM</h1>
+    <p>DOM é Document Object Model. É um conjunto de objetos dentro do navegador que da acesso aos componentes do site</p>
+
+    <h2>Árvore DOM</h2>
+    <p>Tudo começa na raiz que é a janela do seu navegador ou seja a Window. Dentro do Window temos outros objetos como location, document(onde você está atualmente) e history(é o histórico)</p>
+    <p>Dentro do <strong>Document</strong> exite o <strong>HTML</strong></p>
+    <p>Dentro de HTML temos mais dois objetos (ou filhos) que são o <strong>Head</strong> e <strong>body</strong>. HTML é um <strong>parent</strong> (pode chamar de pai ou mãe) de <strong>head</strong> e <strong>body</strong>, quem está embaixo é <strong>child</strong> e quem está em cima é <strong>parent</strong> é uma posição hierárquica.</p>
+    <p>Imagine que dentro de body eu tenho um paragrafo e dentro deste paragrafo está uma palavra envelopada com a tag strong, a tag strong é <strong>child</strong> do paragráfo e este é parent da tag</p>
+    <p><strong>Obs: os scripts permitem que manipulemos elementos na árvore DOM</strong></p>
+
+    <h2 id="msg">Navegando na árvore DOM</h2>
+    <p>Há várias formas de acessar os elementos</p>
+    <ul>
+        <li>Por marca</li>
+        <li>Por ID</li>
+        <li>Por nome</li>
+        <li>Por Classe</li>
+        <li>Por seletor</li>
+    </ul>
+
+    <h2>Forma correta de selecionar o DOM pelo script</h2>
+    <p>O mais recomendado é pelo método Selector como:</p>
+    
+    <p>querySelector() ou querySelectorAll()</p>
+
+
+    <script>
+        window.document.write('Olá Mundo! <br>')
+        var p1 = window.document.getElementsByTagName('p')[0] // atribuímos a uma variável o nome p1, essa váriavel, por intermédio do metodo getElementsByTagName() que permite que consigamos evocar uma tag colocando o nome dela dentro dos parenteses, mas para selecionar um especifica temos que indicar o seu número  nos colchetes, no caso o número zero evoca o primeiro paragráfo. Mas esxitem formas melhores de selecionar um objeto, se o site estiver muito complexo é melhor utilizar outro método como o getElementsById:
+        var paragrafo = window.document.getElementById('msg')
+        paragrafo.style.background = 'pink'
+
+        //Na verdade o melhor método de seleção é o querySelector:
+
+        var titulo = window.document.querySelector('h1.titulo')// pode colocar somente o nome da tag mas se ela tiver uma classe você coloca o nome da tag se guida de ponto e o nome da classe. Ex: h1.titulo. Se a tag tiver um ID, escreva o nome da tag seguido de # e o nome do ID.
+        titulo.style.backgroundColor = 'pink' 
+
+        window.document.write(`No primeiro parágrafo vemos a seguinte mensagen: ${p1.innerText}.`)//innerText vai fazer que o valor dentro da váriável que no caso é o parágrafo 0 seja escrito no document HTML. Esse innerText não pega a formatação padrão do documente HTML se vocÇe queiser que isso ocorrs você deve substitui-lo por innerHTML
+        
+    </script>
+</body>
+</html>

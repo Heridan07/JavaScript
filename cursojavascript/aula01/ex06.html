@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+
+    <style>
+        #area{
+
+            background-color: green;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+            color: aliceblue;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>O Estudo dos Eventos DOM</h1>
+    <p>Um evento é tudo aqueli que pode acontecer dentro de uma div. Ex: Passar o mouse em cima e a div mudar de cor.</p>
+    <p>MDN Web docs é um site com listas de eventos DOM</p>
+    <h2>Funções</h2>
+    <p>Antes de explicar como se dispara um evento DOM você deve saber que funções em JavaScript são conjuntos de códigos que serão executados só quando um evento ocorrer. Para fazer uma função você vai colocar o código da função dentro de bloco. Um bloco rm JS fica dentro de chaves "{}". A seguir vamos ver a estrutura de uma função:</p>
+
+    <code>
+        function ação (parâmetro){Aqui coloca o código da função}
+    </code>
+
+    <p>devemos colocar a palavra function para indicar que é uma função, logo após vamos nomer a função(a função tem que ser um verbo, ou seja, a função é uma ação), depois pode colocar um parâmetro dentro das aspas e por fim dentro das chaves (bloco) você irá colocar o código.</p>
+
+    <hr>
+
+    <h3>Área de teste</h3>
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"> <!--onclick seria um gatilho dentro da div que evoca a função atribuida a ele ao clicar, os outros dois eventos são acionados ao passar o mouse em cima.-->
+
+        <p>Interaja</p>
+
+    </div>
+
+    <script>
+        function clicar() {
+            var area = window.document.getElementById('area')
+            area.innerText= 'Ain Zé da Mangá'
+        }
+        function entrar(){
+            var area = window.document.getElementById('area')
+            area.innerText='Tira'
+        }
+        function sair(){
+            var area = window.document.getElementById('area')
+            area.innerText ='Bota'
+        }
+    </script>
+
+    <hr>
+
+    <h1>Uma forma melhor de criar eventos</h1>
+
+    <p>Utilizaremos o método <code>addEventListener('nome do evento', nome da variavel da função)</code></p>
+    <p>Assim não precisamos colocar gatilhos como onclik no html e fazemos só no script</p>
+
+    <div id="area1"> 
+
+        <p>Interaja</p>
+
+    </div>
+
+    <script>
+        function clicar() {
+            
+            var area1 = window.document.getElementById('area')
+            area1.addEventListener('click', clicar)
+            area1.innerText= 'Ain Zé da Mangá'
+        }
+        function entrar(){
+            var area1 = window.document.getElementById('area')
+            area1.addEventListener('mouseenter', entrar)
+            area1.innerText='Tira'
+        }
+        function sair(){
+            var area1 = window.document.getElementById('area')
+            area1.addEventListener('mouseout', sair)
+            area1.innerText ='Bota'
+        }
+    </script>
+
+</body>
+</html>

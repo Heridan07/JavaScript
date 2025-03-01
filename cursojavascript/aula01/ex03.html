@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuação do tratamento de dados</title>
+</head>
+<body>
+
+    <h1>Usando o documento HTML Como saída de dados</h1>
+
+    <h1>Metodos de maipulação de numbers</h1>
+
+    <p>n.toFixed() -> Fiza o número de casas após a vírgula</p>
+    <p>n.toFixed().replace('.',',') - > Além de definir o número de casas, troca um elemento pelo outro, no caso foi trocado o ponto pela vírgula</p>
+
+    <h1>Converter símbolo da moeda no JS</h1>
+    <p>n.toLocaleString('pt-BR', {style: 'currency', currency:'BRL'}) -> pedimos para localizar o símblo monetário no Brasil mas pode ser outros países: UDS= dolar, EUR = euro etc.</p>
+
+
+
+    <script>
+        var nome= window.prompt('Qual é o seu nome?: ')
+        document.write(`Olá ${nome}! O seu nome tem ${nome.length} letras.<br/>`)//escreve na página html quebrando uma linha
+        document.write(`<strong>Seu nome em letras maiúsculas é ${nome.toUpperCase()}.<strong/>`)
+        //Perceba que colocamos uma tag html para quebrar a linha, o JS permite isso.
+    </script>
+</body>
+</html>

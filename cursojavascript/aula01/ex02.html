@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamento de dados</title>
+</head>
+<body>
+    <h1>Convertendo tipos primitivos</h1>
+
+    <h2>String para Number</h2>
+
+    <p>Number.parseInt()</p>
+    <p>Number.parseFloat()</p>
+    <p>Number() -> Coverte uma string para number de acordo com o tipo de dado apresentado</p>
+
+    <h2>Number para String</h2>
+    <p>String()</p>
+    <p>n.toString()</p>
+
+    <h2>Template String</h2>
+    <p>É uma nova forma de formatar strings, para usar esse modo vamos utilizar as crases -> ``. O que invoca a variável é o placeholder -> ${Colocar variável aqui}</p>
+
+    <h2>Alguns métodos de manipulação de String</h2>
+    <p>s.lenght</p>
+    <p>s.toUpperCase</p>
+    <p>s.toLowerCase</p>
+    <script>
+       var nome = window.prompt("Qual é o seu nome?") //para sinalizar que é uma variável podemos usar var, let ou const. 
+        window.alert("É um grande prazer te conhecer, " + nome)
+        var n1 = Number( window.prompt('Digite um número: '))//O prompt lê como tipo string é preciso converter para number.
+        var n2 = Number( window.prompt('Digite outro número: '))
+        var soma = n1 + n2
+        window.alert(`A soma entre ${n1} e ${n2} é igual a ${soma}.`)
+    </script>
+
+</body>
+</html>
